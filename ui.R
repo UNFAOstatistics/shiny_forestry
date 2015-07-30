@@ -10,13 +10,13 @@ library(shiny)
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Dynamic filtering of Diamonds dataset from ggplot2"),
+  titlePanel("Dynamic filtering of diamonds dataset"),
   
   # Sidebar with a slider input for number of bins
   sidebarLayout(
     sidebarPanel(
       textInput("text_value", "Plot title", "type here")
-      # Dynamic UI
+#       # Dynamic UI
 #       ,uiOutput("ui_var_x")
 #       ,uiOutput("ui_var_y")
 #       ,uiOutput("ui_var_color")
