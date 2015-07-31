@@ -51,14 +51,31 @@ shinyServer(function(input, output) {
 #     cuts <- as.character(unique(diamonds[diamonds$clarity %in% input$clarity_value,]$cut))
 #     list(selectInput("cut_value", h5("Pick a cut"), choices = cuts, selected = cuts[1]))
 #     })
+#   
+# #   output$output_ui_slider_x <- renderUI({
+# #     dat <- diamonds[diamonds$clarity %in% input$clarity_value, ] 
+# #     dat <- dat[dat$cut   %in% input$cut_value, ]
+# #     r <- range(dat[[input$var_x_value]])
+# #     sliderInput("slider_x_value", "Set range for x-axis:", min=r[1], max=r[2], value=r[1]:r[2])
+# #   })
+# #   
+# #   output$output_ui_slider_y <- renderUI({
+# #     dat <- diamonds[diamonds$clarity %in% input$clarity_value, ] 
+# #     dat <- dat[dat$cut   %in% input$cut_value, ]
+# #     minim <- min(dat[[input$var_y_value]])
+# #     maxim <- max(dat[[input$var_y_value]])
+# #     sliderInput("slider_y_value", "Set range for y-axis:", min=minim, max=maxim, value=minim:maxim)
+# #   })
+  
+  
   
   # ------------------------------------------------------------- #
   # ------------------------------------------------------------- #
   # PLOT
   output$plot <- renderPlot({
     
-#     # ------------------------------------------------------------- #
-#     # subset data
+    # ------------------------------------------------------------- #
+    # subset data
 #     dat <- diamonds[diamonds$clarity %in% input$clarity_value, ] 
 #     dat <- dat[dat$cut   %in% input$cut_value, ]
 #     # Define the plot
@@ -68,6 +85,7 @@ shinyServer(function(input, output) {
 #                               color = input$var_color_value))
 #     p <- p + geom_point()
 #     p <- p + labs(title = input$text_value)
+#     #p <- coord_cartesian(ylim=c(input$slider_y_value[1],input$slider_y_value[2]))
     
     # ------------------------------------------------------------- #
     
@@ -78,7 +96,7 @@ shinyServer(function(input, output) {
 #                               color = depth))
 #     p <- p + geom_point()
 #     p <- p + labs(title = input$text_value)
-    print(p)
+#     print(p)
     
   })
   
